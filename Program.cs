@@ -15,7 +15,6 @@ namespace opdrachtweek3
             {
                 int result = firstNumber * i;
                Console.WriteLine("{0} * {1} = {2}", i, firstNumber, result);
-               list.Add(result);
             }
         }
     }

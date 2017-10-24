@@ -1,20 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace opdrachtweek3
+namespace oefening02
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int firstNumber, i;
-            Console.WriteLine("enter a value:");
-            firstNumber = Convert.ToInt32(Console.ReadLine());
-            List<int> list = new List<int>();
-            for(i = 0; i <= 10; i++)
+            uitvoerenFibonacci();
+        }
+        static int Fibonacci(int n)
+        {
+            int a = 0;
+            int b = 1;
+
+            for(int i = 0; i < n; i++)
             {
-                int result = firstNumber * i;
-               Console.WriteLine("{0} * {1} = {2}", i, firstNumber, result);
+                int temp = a;
+                a = b;
+                b = temp + b;
+            }
+            return a;
+        }
+        private static void uitvoerenFibonacci()
+        {
+            int input;
+            Console.WriteLine("Geef een getal in");
+            input = Convert.ToInt32(Console.ReadLine());
+            for(int i = 0; i < input; i ++) 
+            {
+                Console.WriteLine(Fibonacci(i));
             }
         }
     }
